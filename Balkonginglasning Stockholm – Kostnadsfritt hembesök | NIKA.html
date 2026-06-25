@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balkonginglasning Stockholm – Kostnadsfritt hembesök | NIKA</title>
+<meta name="description" content="Balkong- och altaninglasning från vår egen fabrik i Finland – bättre pris utan mellanhänder. Kostnadsfritt hembesök i Stockholm. 30+ års erfarenhet, 7 års garanti.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --navy:#16243F;
+  --navy-deep:#0E1830;
+  --sand:#F6F1E8;
+  --sand-warm:#EFE6D6;
+  --ink:#1A1A1A;
+  --ink-soft:#4A4A45;
+  --brass:#A8824F;
+  --brass-light:#C9A875;
+  --white:#FFFFFF;
+  --green-trust:#3D6B52;
+  --border:rgba(22,36,63,0.12);
+  --shadow-sm:0 2px 12px rgba(22,36,63,0.06);
+  --shadow-md:0 8px 32px rgba(22,36,63,0.10);
+  --shadow-lg:0 20px 60px rgba(22,36,63,0.16);
+  --radius:18px;
+  --radius-sm:10px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--ink);
+  background:var(--sand);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.disp{
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  color:var(--navy-deep);
+}
+.eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:12px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--brass);
+  font-weight:500;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;border:none;}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px;}
+@media(max-width:720px){.wrap{padding:0 20px;}}
+
+/* ===== NAV ===== */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(246,241,232,0.85);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow .3s;
+}
+.nav.scrolled{box-shadow:var(--shadow-sm);}
+.nav-inner{
+  max-width:1280px;margin:0 auto;padding:18px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{font-family:'Fraunces',serif;font-weight:600;font-size:22px;color:var(--navy-deep);letter-spacing:0.02em;}
+.logo sup{font-size:11px;}
+.nav-links{display:flex;gap:36px;font-size:14px;font-weight:500;color:var(--ink-soft);}
+.nav-links a:hover{color:var(--navy-deep);}
+.nav-cta{
+  background:var(--navy-deep);color:var(--white);
+  padding:12px 24px;border-radius:100px;font-size:14px;font-weight:600;
+  transition:background .2s, transform .2s;
+}
+.nav-cta:hover{background:var(--brass);transform:translateY(-1px);}
+@media(max-width:900px){.nav-links{display:none;}}
+
+/* ===== HERO ===== */
+.hero{
+  padding:148px 0 80px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+}
+.hero-bg img{
+  width:100%;height:100%;object-fit:cover;
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(246,241,232,0.93) 0%, rgba(239,230,214,0.96) 55%, var(--sand-warm) 100%);
+}
+.hero .wrap{position:relative;z-index:1;}
+.hero-grid{
+  display:grid;grid-template-columns:1fr 0.92fr;gap:56px;align-items:center;
+}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr;}}
+
+.hero-copy{padding-top:8px;}
+.hero h1{
+  font-size:clamp(38px,5vw,60px);
+  line-height:1.05;
+  margin:18px 0 22px;
+}
+.hero h1 em{font-style:italic;color:var(--brass);}
+.hero-sub{
+  font-size:18px;color:var(--ink-soft);max-width:480px;margin-bottom:32px;
+}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px;}
+.btn-primary{
+  background:var(--navy-deep);color:var(--white);
+  padding:17px 30px;border-radius:100px;font-weight:600;font-size:15.5px;
+  box-shadow:var(--shadow-md);
+  transition:transform .2s, box-shadow .2s, background .2s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);background:#1d3158;}
+.btn-secondary{
+  background:transparent;color:var(--navy-deep);
+  padding:17px 28px;border-radius:100px;font-weight:600;font-size:15.5px;
+  border:1.5px solid var(--border);
+  display:inline-flex;align-items:center;gap:8px;
+  transition:border-color .2s, background .2s;
+}
+.btn-secondary:hover{border-color:var(--navy-deep);background:rgba(22,36,63,0.04);}
+
+.trust-row{display:flex;gap:28px;flex-wrap:wrap;align-items:center;margin-top:8px;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink-soft);font-weight:500;}
+.trust-item svg{width:18px;height:18px;color:var(--green-trust);flex-shrink:0;}
+
+/* ===== FORM CARD ===== */
+.form-card{
+  background:var(--white);border-radius:var(--radius);
+  padding:34px;box-shadow:var(--shadow-lg);
+  border:1px solid var(--border);
+  position:relative;
+}
+.form-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--brass),var(--navy-deep));
+  border-radius:var(--radius) var(--radius) 0 0;
+}
+.form-eyebrow{font-size:12px;color:var(--green-trust);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.form-card h3{font-size:24px;margin-bottom:6px;}
+.form-card p.fc-sub{font-size:14px;color:var(--ink-soft);margin-bottom:24px;}
+.field{margin-bottom:14px;}
+.field label{font-size:12.5px;font-weight:600;color:var(--navy-deep);display:block;margin-bottom:6px;}
+.field input,.field textarea{
+  width:100%;padding:13px 15px;border:1.5px solid var(--border);
+  border-radius:10px;font-family:inherit;font-size:14.5px;background:var(--sand);
+  transition:border-color .2s, background .2s;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--brass);background:var(--white);}
+.field textarea{resize:none;height:64px;}
+.submit-btn{
+  width:100%;background:var(--navy-deep);color:var(--white);
+  padding:17px;border-radius:100px;font-weight:700;font-size:15.5px;
+  margin-top:6px;transition:background .2s, transform .2s;
+}
+.submit-btn:hover{background:var(--brass);transform:translateY(-1px);}
+.form-footnote{
+  display:flex;gap:14px;justify-content:center;margin-top:14px;
+  font-size:12px;color:var(--ink-soft);flex-wrap:wrap;
+}
+.form-footnote span{display:flex;align-items:center;gap:4px;}
+
+/* ===== STATS ===== */
+.stats{padding:64px 0;background:var(--white);}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;}
+.stat{background:var(--white);padding:38px 24px;text-align:center;}
+.stat-num{font-family:'Fraunces',serif;font-size:42px;color:var(--navy-deep);font-weight:500;}
+.stat-label{font-size:13.5px;color:var(--ink-soft);margin-top:6px;font-weight:500;}
+@media(max-width:780px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ===== SECTION HEADER ===== */
+.sec-head{max-width:640px;margin-bottom:52px;}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.sec-head h2{font-size:clamp(30px,3.6vw,42px);margin-top:14px;line-height:1.12;}
+.sec-head p{font-size:16.5px;color:var(--ink-soft);margin-top:14px;}
+
+/* ===== WHY ===== */
+.why{padding:96px 0;background:var(--sand);}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.why-grid{grid-template-columns:1fr;}}
+.why-card{
+  background:var(--white);border-radius:var(--radius);padding:32px 28px;
+  border:1px solid var(--border);transition:transform .25s, box-shadow .25s;
+}
+.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.why-icon{
+  width:48px;height:48px;border-radius:12px;background:var(--sand-warm);
+  display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  color:var(--navy-deep);
+}
+.why-card h3{font-size:19px;margin-bottom:8px;}
+.why-card p{font-size:14.5px;color:var(--ink-soft);}
+
+/* ===== GALLERY ===== */
+.gallery{padding:96px 0;background:var(--white);}
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,220px);gap:14px;
+}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:14px;}
+.g1{grid-column:1/3;grid-row:1/3;}
+.g2{grid-column:3/4;}
+.g3{grid-column:4/5;}
+.g4{grid-column:3/5;}
+@media(max-width:900px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,180px);}
+  .g1{grid-column:1/3;grid-row:1/2;}
+  .g2{grid-column:1/2;grid-row:2/3;}
+  .g3{grid-column:2/3;grid-row:2/3;}
+  .g4{grid-column:1/3;grid-row:3/4;}
+}
+
+/* ===== HOW IT WORKS ===== */
+.how{padding:96px 0;background:var(--navy-deep);color:var(--white);position:relative;overflow:hidden;}
+.how::before{
+  content:'';position:absolute;top:-30%;right:-10%;width:560px;height:560px;
+  background:radial-gradient(circle,rgba(168,130,79,0.18),transparent 70%);
+}
+.how .sec-head h2{color:var(--white);}
+.how .eyebrow{color:var(--brass-light);}
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;position:relative;}
+@media(max-width:980px){.timeline{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.timeline{grid-template-columns:1fr;}}
+.t-step{position:relative;}
+.t-num{
+  font-family:'Fraunces',serif;font-size:32px;color:var(--brass-light);margin-bottom:14px;
+}
+.t-step h4{font-size:15.5px;color:var(--white);margin-bottom:8px;font-weight:600;font-family:'Inter';}
+.t-step p{font-size:13.5px;color:rgba(255,255,255,0.6);}
+
+/* ===== BEFORE/AFTER ===== */
+.ba{padding:96px 0;background:var(--sand);}
+.ba-slider{
+  position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);
+  aspect-ratio:16/8;max-width:920px;margin:0 auto;cursor:ew-resize;
+  user-select:none;
+}
+.ba-slider img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;}
+.ba-after{clip-path:inset(0 0 0 50%);}
+.ba-handle{
+  position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--white);
+  box-shadow:0 0 0 1px rgba(0,0,0,0.1);
+}
+.ba-handle::after{
+  content:'↔';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:46px;height:46px;background:var(--white);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--navy-deep);
+  box-shadow:var(--shadow-md);
+}
+.ba-tag{
+  position:absolute;top:18px;font-family:'DM Mono',monospace;font-size:11px;
+  letter-spacing:0.08em;background:rgba(22,36,63,0.75);color:var(--white);
+  padding:6px 12px;border-radius:100px;backdrop-filter:blur(6px);
+}
+.ba-tag.before{left:18px;}
+.ba-tag.after{right:18px;}
+
+/* ===== TESTIMONIALS ===== */
+.testi{padding:96px 0;background:var(--white);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+.testi-card{
+  background:var(--sand);border-radius:var(--radius);padding:30px;border:1px solid var(--border);
+}
+.stars{color:var(--brass);font-size:15px;margin-bottom:14px;letter-spacing:2px;}
+.testi-card p{font-size:15px;color:var(--ink);margin-bottom:18px;font-style:italic;}
+.testi-who{display:flex;align-items:center;gap:10px;}
+.testi-avatar{
+  width:38px;height:38px;border-radius:50%;background:var(--navy-deep);color:var(--white);
+  display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;font-family:'Fraunces';
+}
+.testi-name{font-size:13.5px;font-weight:600;color:var(--navy-deep);}
+.testi-loc{font-size:12px;color:var(--ink-soft);}
+
+/* ===== FAQ ===== */
+.faq{padding:96px 0;background:var(--sand);}
+.faq-list{max-width:760px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{
+  padding:22px 4px;display:flex;justify-content:space-between;align-items:center;
+  cursor:pointer;font-weight:600;font-size:16px;color:var(--navy-deep);
+}
+.faq-q .plus{font-size:22px;color:var(--brass);transition:transform .25s;font-weight:400;}
+.faq-item.open .plus{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.faq-item.open .faq-a{max-height:200px;}
+.faq-a p{padding:0 4px 22px;color:var(--ink-soft);font-size:14.5px;max-width:640px;}
+
+/* ===== FINAL CTA ===== */
+.final{padding:110px 0;background:var(--navy-deep);text-align:center;position:relative;overflow:hidden;color:var(--white);}
+.final::before{
+  content:'';position:absolute;bottom:-40%;left:50%;transform:translateX(-50%);
+  width:800px;height:800px;background:radial-gradient(circle,rgba(168,130,79,0.16),transparent 65%);
+}
+.final-inner{position:relative;max-width:640px;margin:0 auto;}
+.final h2{color:var(--white);font-size:clamp(32px,4.2vw,48px);margin-bottom:18px;}
+.final p{color:rgba(255,255,255,0.68);font-size:17px;margin-bottom:36px;}
+.final-contact{margin-top:28px;display:flex;gap:28px;justify-content:center;flex-wrap:wrap;font-size:14.5px;color:rgba(255,255,255,0.7);}
+.final-contact a{font-weight:600;color:var(--white);}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy-deep);padding:32px 0 40px;border-top:1px solid rgba(255,255,255,0.08);}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.foot-inner p{color:rgba(255,255,255,0.45);font-size:13px;}
+.foot-links{display:flex;gap:20px;font-size:13px;}
+.foot-links a{color:rgba(255,255,255,0.55);}
+.foot-links a:hover{color:var(--white);}
+
+/* ===== STICKY MOBILE CTA ===== */
+.sticky-mobile{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;
+  background:var(--white);padding:14px 18px;box-shadow:0 -8px 24px rgba(0,0,0,0.1);
+  border-top:1px solid var(--border);
+}
+.sticky-mobile .btn-primary{width:100%;justify-content:center;}
+@media(max-width:780px){.sticky-mobile{display:block;}body{padding-bottom:78px;}}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ===== SEASON SECTION ===== */
+.season-sec{padding:88px 0;background:var(--white);}
+.season-layout{display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;align-items:center;}
+@media(max-width:900px){.season-layout{grid-template-columns:1fr;}}
+.season-visual{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:5/4;box-shadow:var(--shadow-lg);}
+.season-visual img{width:100%;height:100%;object-fit:cover;transition:opacity .4s ease;}
+.season-copy h2{font-size:clamp(28px,3.4vw,38px);margin:14px 0 16px;}
+.season-copy p.lead{font-size:16px;color:var(--ink-soft);max-width:480px;margin-bottom:32px;}
+.season-bar-track{
+  display:flex;background:var(--sand);border-radius:100px;padding:5px;gap:4px;margin-bottom:22px;
+}
+.season-bar-btn{
+  flex:1;text-align:center;padding:13px 10px;border-radius:100px;font-size:13.5px;font-weight:600;
+  color:var(--ink-soft);transition:background .25s, color .25s;background:transparent;font-family:inherit;
+}
+.season-bar-btn.active{background:var(--navy-deep);color:var(--white);}
+.season-progress{height:4px;background:var(--border);border-radius:4px;overflow:hidden;margin-bottom:22px;}
+.season-progress-fill{height:100%;background:var(--brass);border-radius:4px;width:25%;transition:width .4s ease;}
+.season-copy .season-detail{font-size:15px;color:var(--ink-soft);min-height:48px;}
+.season-copy .season-detail strong{color:var(--navy-deep);}
+
+.section-pad{padding:96px 0;}
+@media(max-width:780px){.section-pad{padding:64px 0;}.hero{padding-top:120px;}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="logo">NIKA<sup>®</sup></div>
+    <div class="nav-links">
+      <a href="#varfor">Varför NIKA</a>
+      <a href="#galleri">Inspiration</a>
+      <a href="#process">Process</a>
+      <a href="#omdomen">Omdömen</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#boka" class="nav-cta">Boka hembesök</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=80" alt="">
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal in">
+      <div class="eyebrow">Balkonginglasning · Stockholm</div>
+      <h1>Balkonginglasning som <em>förlänger sommaren.</em></h1>
+      <p class="hero-sub">Skydda din balkong mot vind, regn och buller — och behåll hela utsikten. Tillverkat i vår egen fabrik i Finland sedan 1988.</p>
+      <div class="hero-ctas">
+        <a href="#boka" class="btn-primary">
+          Boka kostnadsfritt hembesök →
+        </a>
+        <a href="tel:0841041763" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Ring oss idag
+        </a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4,7/5 på Reco</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>7 års garanti</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Egen glasfabrik</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>30+ års erfarenhet</div>
+      </div>
+    </div>
+
+    <div class="reveal in">
+      <div class="form-card" id="boka">
+        <div class="form-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          Svar inom 24 timmar
+        </div>
+        <h3>Boka kostnadsfritt hembesök</h3>
+        <p class="fc-sub">Ingen förpliktelse. Vi mäter, rådgör och ger en personlig offert.</p>
+        <form onsubmit="event.preventDefault(); this.querySelector('.submit-btn').innerText='Tack! Vi kontaktar dig inom 24h ✓';">
+          <div class="field"><label>Namn</label><input type="text" placeholder="Förnamn Efternamn" required></div>
+          <div class="field"><label>Telefonnummer</label><input type="tel" placeholder="070-123 45 67" required></div>
+          <div class="field"><label>E-post</label><input type="email" placeholder="namn@email.se" required></div>
+          <div class="field"><label>Adress</label><input type="text" placeholder="Gata, postnummer, ort" required></div>
+          <div class="field"><label>Meddelande (valfritt)</label><textarea placeholder="Berätta kort om din balkong eller altan..."></textarea></div>
+          <button type="submit" class="submit-btn">Boka kostnadsfritt hembesök</button>
+        </form>
+        <div class="form-footnote">
+          <span>✓ Kostnadsfritt</span><span>✓ Ingen förpliktelse</span><span>✓ Personlig offert</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEASON SECTION -->
+<section class="season-sec" id="sasong">
+  <div class="wrap">
+    <div class="season-layout reveal">
+      <div class="season-visual">
+        <img id="seasonImg" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80" alt="Inglasad balkong genom säsongerna">
+      </div>
+      <div class="season-copy">
+        <div class="eyebrow">En balkong, fyra säsonger</div>
+        <h2>Samma balkong. Hela året.</h2>
+        <p class="lead">Med NIKA-inglasning förlänger du säsongen från fyra till nio månader — utan att kompromissa med utsikten.</p>
+        <div class="season-bar-track" id="seasonTrack">
+          <button class="season-bar-btn active" data-i="0">Vår</button>
+          <button class="season-bar-btn" data-i="1">Sommar</button>
+          <button class="season-bar-btn" data-i="2">Höst</button>
+          <button class="season-bar-btn" data-i="3">Vinter</button>
+        </div>
+        <div class="season-progress"><div class="season-progress-fill" id="seasonProgress"></div></div>
+        <div class="season-detail" id="seasonText"><strong>Vår.</strong> Njut av morgonkaffet på balkongen redan i mars, skyddad från vind och kyla.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal"><div class="stat-num">1000+</div><div class="stat-label">Installerade inglasningar</div></div>
+      <div class="stat reveal"><div class="stat-num">30+</div><div class="stat-label">Års erfarenhet</div></div>
+      <div class="stat reveal"><div class="stat-num">7 år</div><div class="stat-label">Garanti</div></div>
+      <div class="stat reveal"><div class="stat-num">Egen</div><div class="stat-label">Glasfabrik i Finland</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why section-pad" id="varfor">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Varför NIKA</div>
+      <h2>Byggt för nordiskt klimat. Skapat för din balkong.</h2>
+      <p>Vi tillverkar glaset i vår egen fabrik i Finland — det ger bättre pris, snabbare leverans och full kontroll på kvaliteten.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div><h3>Ramfri design</h3><p>Maximal utsikt utan störande profiler i synfältet.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><h3>Tillverkas efter din balkong</h3><p>Varje system måttanpassas individuellt för perfekt passform.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>Skydd mot vind och regn</h3><p>Förläng balkongsäsongen från fyra till nio månader.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/></svg></div><h3>Enkel rengöring</h3><p>Alla glas kan öppnas helt för bekväm rengöring.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg></div><h3>CE-certifierade produkter</h3><p>Testade och godkända enligt europeiska standarder.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Bygglovshjälp</h3><p>Vi guidar dig genom hela processen, steg för steg.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery section-pad" id="galleri">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Inspiration</div>
+      <h2>Din balkong, i alla årstider.</h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <img class="g1" src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=900&q=80" alt="Inglasad balkong">
+      <img class="g2" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80" alt="Balkong inredning">
+      <img class="g3" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Balkong vinter">
+      <img class="g4" src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=900&q=80" alt="Balkong sommar">
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how section-pad" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Så går det till</div>
+      <h2>Från första besök till färdig balkong.</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="t-step"><div class="t-num">01</div><h4>Boka hembesök</h4><p>Kostnadsfritt och utan förpliktelse.</p></div>
+      <div class="t-step"><div class="t-num">02</div><h4>Vi mäter</h4><p>Går igenom lösningen tillsammans.</p></div>
+      <div class="t-step"><div class="t-num">03</div><h4>Personlig offert</h4><p>Skräddarsydd för din balkong.</p></div>
+      <div class="t-step"><div class="t-num">04</div><h4>Bygglovshjälp</h4><p>Vi hjälper genom processen.</p></div>
+      <div class="t-step"><div class="t-num">05</div><h4>Tillverkning</h4><p>I vår egen fabrik i Finland.</p></div>
+      <div class="t-step"><div class="t-num">06</div><h4>Installation</h4><p>Professionellt på 1–3 dagar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE/AFTER -->
+<section class="ba section-pad">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow">Förvandlingen</div>
+      <h2>Se skillnaden själv.</h2>
+    </div>
+    <div class="ba-slider reveal" id="baSlider">
+      <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1000&q=80" alt="Innan">
+      <img class="ba-after" id="baAfter" src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=1000&q=80" alt="Efter">
+      <div class="ba-tag before">FÖRE</div>
+      <div class="ba-tag after">EFTER</div>
+      <div class="ba-handle" id="baHandle"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi section-pad" id="omdomen">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Vad våra kunder säger</div>
+      <h2>Betrodda av hundratals balkonger i Stockholm.</h2>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Personligt och professionellt från start till resultat. Nu kan vi använda balkongen som extrarummet, i alla årstider och väder."</p>
+        <div class="testi-who"><div class="testi-avatar">A</div><div><div class="testi-name">Annika S.</div><div class="testi-loc">Bromma, Stockholm</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Sjukt nöjda med balkonginglasningen. Högkvalitativa produkter, professionell personal som städade noggrant efter sig."</p>
+        <div class="testi-who"><div class="testi-avatar">M</div><div><div class="testi-name">Mikael L.</div><div class="testi-loc">Södermalm, Stockholm</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Hela processen kändes trygg från första hembesöket till installation. Balkongen används nu året runt."</p>
+        <div class="testi-who"><div class="testi-avatar">L</div><div><div class="testi-name">Lena K.</div><div class="testi-loc">Lidingö, Stockholm</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq section-pad" id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow">Vanliga frågor</div>
+      <h2>Det du undrar — innan du frågar.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item open">
+        <div class="faq-q">Behöver jag bygglov?<span class="plus">+</span></div>
+        <div class="faq-a"><p>I de flesta fall ja, men vi hjälper dig genom hela processen — från ansökan till godkännande.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Hur lång är leveranstiden?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Vanligtvis 8–12 veckor från beställning, med 1–3 dagars installation beroende på projektets storlek.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Hur fungerar rengöringen?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Alla glaspaneler kan öppnas helt med vårt patenterade enhandssystem för enkel rengöring.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Vad händer om bygglov nekas?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Vi rådgör kring alternativ lösning tillsammans med dig — du står aldrig ensam i processen.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Hur fungerar delbetalning?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Vi erbjuder räntefri delbetalning upp till 48 månader för en flexibel betalningsplan.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Hur lång garanti är det?<span class="plus">+</span></div>
+        <div class="faq-a"><p>7 års garanti på både material och installation — vår kvalitetsgaranti till dig.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap final-inner reveal">
+    <div class="eyebrow" style="color:var(--brass-light)">Redo att börja?</div>
+    <h2>Redo att förvandla din balkong?</h2>
+    <p>Boka ett kostnadsfritt hembesök så går vi igenom din balkong och tar fram en personlig lösning — helt utan förpliktelser.</p>
+    <a href="#boka" class="btn-primary" style="background:var(--brass);">Boka kostnadsfritt hembesök →</a>
+    <div class="final-contact">
+      <span>📞 <a href="tel:0841041763">08-410 417 63</a></span>
+      <span>✉️ <a href="mailto:info@nika.se">info@nika.se</a></span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <p>© 2026 NIKA Inglasning AB · Org.nr 556xxx-xxxx · Bromma, Stockholm</p>
+    <div class="foot-links">
+      <a href="#">Integritetspolicy</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-mobile">
+  <a href="#boka" class="btn-primary">Boka kostnadsfritt hembesök</a>
+</div>
+
+<script>
+// Nav scroll shadow
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.12 });
+revealEls.forEach(el => obs.observe(el));
+
+// Season toggle
+const seasons = [
+  { img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80', html: '<strong>Vår.</strong> Njut av morgonkaffet på balkongen redan i mars, skyddad från vind och kyla.' },
+  { img: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=900&q=80', html: '<strong>Sommar.</strong> Öppna alla glas helt och få en vanlig öppen balkong — full frihet när du vill.' },
+  { img: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=900&q=80', html: '<strong>Höst.</strong> Mysigt och skyddat när regnet och blåsten kommer — utsikten kvar, kylan ute.' },
+  { img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80', html: '<strong>Vinter.</strong> Varmt och inbjudande trots minusgrader — ett extra rum året runt.' }
+];
+document.querySelectorAll('.season-bar-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const i = +btn.dataset.i;
+    document.querySelectorAll('.season-bar-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('seasonImg').src = seasons[i].img;
+    document.getElementById('seasonText').innerHTML = seasons[i].html;
+    document.getElementById('seasonProgress').style.width = ((i + 1) * 25) + '%';
+  });
+});
+
+// Before/after slider
+const baSlider = document.getElementById('baSlider');
+const baAfter = document.getElementById('baAfter');
+const baHandle = document.getElementById('baHandle');
+let dragging = false;
+function setBA(x) {
+  const rect = baSlider.getBoundingClientRect();
+  let pct = ((x - rect.left) / rect.width) * 100;
+  pct = Math.max(0, Math.min(100, pct));
+  baAfter.style.clipPath = `inset(0 0 0 ${pct}%)`;
+  baHandle.style.left = pct + '%';
+}
+baSlider.addEventListener('mousedown', () => dragging = true);
+window.addEventListener('mouseup', () => dragging = false);
+window.addEventListener('mousemove', (e) => { if (dragging) setBA(e.clientX); });
+baSlider.addEventListener('touchstart', () => dragging = true);
+window.addEventListener('touchend', () => dragging = false);
+window.addEventListener('touchmove', (e) => { if (dragging) setBA(e.touches[0].clientX); });
+baSlider.addEventListener('click', (e) => setBA(e.clientX));
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>
